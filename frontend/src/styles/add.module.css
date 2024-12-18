@@ -2,7 +2,7 @@
 
 
 /* General container styling */
-.drive-input-container {
+.driveinputcontainer {
     width: 100%;
     max-width: 600px;
     padding: 20px;
@@ -12,7 +12,7 @@
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   }
-  .drive-input-container:hover{
+  .driveinputcontainer:hover{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 
   }
@@ -34,7 +34,7 @@
   }
   
   /* Form styling */
-  .drive-form {
+  .driveform {
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -42,7 +42,7 @@
   }
   
   /* Form group styling */
-  .form-group {
+  .formgroup {
     position: relative;
     
     font-family: monospace;
@@ -57,7 +57,7 @@
 
   
   /* Submit button styling */
-  .submit-btn {
+  .submitbtn {
     font: inherit;
     background-color: #f0f0f0;
     border: 0;
@@ -74,18 +74,18 @@
     cursor: pointer;
   }
   
-  .submit-btn:active {
+  .submitbtn:active {
     translate: 0 0.225em;
     box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
       0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0, 0 0.125em 0 0 #dedede,
       0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
   }
   
-  .submit-btn:disabled {
+  .submitbtn:disabled {
     background-color: #95a5a6;
     cursor: not-allowed;
   }
-  .form-input{
+  .forminput{
     font-family: "SF Pro";
   max-width: 190px;
   padding: 0.875rem;
@@ -97,18 +97,18 @@
   transition: ease 0.25s;
 
   }
-  .form-input:focus{
+  .forminput:focus{
     box-shadow: 5.5px 7px 0 black;
   }
   
   /* Responsive design */
   @media (max-width: 768px) {
-    .drive-input-container {
+    .driveinputcontainer {
       padding: 15px;
       max-width: 100%;
     }
   
-    .form-input, .submit-btn {
+    .form-nput, .submit-btn {
       font-size: 14px;
       padding: 8px;
     }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./drive.admin.add.css"; // Importing the CSS file
+import Addcss from "../styles/add.module.css"; // Importing the CSS file
 import Input from "../../styled_components/input";
 import Button from "../../styled_components/button.styled-component";
 
@@ -46,11 +46,11 @@ const AddDrive = () => {
   };
 
   return (
-    <div className="drive-input-container">
-      <h2 className="title">Add a New Drive</h2>
-      {message && <p className="message">{message}</p>}
-      <form onSubmit={handleSubmit} className="drive-form">
-        <div className="form-group">
+    <div className={Addcss.driveinputcontainer}>
+      <h2 className={Addcss.title}>Add a New Drive</h2>
+      {message && <p className={Addcss.message}>{message}</p>}
+      <form onSubmit={handleSubmit} className={Addcss.driveform}>
+        <div className={Addcss.formgroup}>
           <Input
             type="text"
             id="name"
@@ -62,7 +62,7 @@ const AddDrive = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={Addcss.formgroup}>
           <input className="form-input"
             type="datetime-local"
             id="time"
@@ -73,7 +73,7 @@ const AddDrive = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={Addcss.formgroup}>
           <Input
             type="url"
             id="image"
@@ -85,7 +85,7 @@ const AddDrive = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={Addcss.formgroup}>
           <Input
             type="text"
             id="description"
@@ -97,7 +97,7 @@ const AddDrive = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={Addcss.formgroup}>
           <Input
             type="text"
             id="eligibility"
@@ -109,7 +109,7 @@ const AddDrive = () => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={Addcss.formgroup}>
           <Input
             type="text"
             id="requirements"

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Input from "../../styled_components/input.jsx";
 import Button from "../../styled_components/button.styled-component.jsx";
-import "./drive.edit.css";
+import Editcss from"../styles/edit.module.css";
 
 const FetchDrive = () => {
   const [name, setName] = useState(""); // State for the drive name
@@ -76,11 +76,11 @@ const FetchDrive = () => {
   };
 
   return (
-    <div className="drive-fetch-container">
-      <h2 className="title">Fetch Drive Information</h2>
-      {message && <p className="message">{message}</p>}
-      <form onSubmit={handleFetch} className="drive-form">
-        <div className="form-group">
+    <div className={ Editcss.drivefetchcontainer}>
+      <h2 className={ Editcss.title}>Fetch Drive Information</h2>
+      {message && <p className={ Editcss.message}>{message}</p>}
+      <form onSubmit={handleFetch} className={ Editcss.driveform}>
+        <div className={ Editcss.formgroup}>
           <Input
             type="text"
             id="name"
@@ -96,12 +96,12 @@ const FetchDrive = () => {
       </form>
 
       {drive && isdrive && (
-        <div className="drive-details">
-          <div className="drive-detail-update">
+        <div className={ Editcss.drivedetails}>
+          <div className={ Editcss.drivedetailupdate}>
           <h3>Drive Details</h3>
           <p><strong>Name:</strong> {drive.name}</p>
           <p><strong>Time:</strong> {new Date(drive.time).toLocaleString()}</p>
-          <p><strong>Image:</strong> <img src={drive.image} alt={drive.name} className="drive-image" style={{ width: '90px', height: 'inherit' }} /></p>
+          <p><strong>Image:</strong> <img src={drive.image} alt={drive.name} className={ Editcss.driveimage} style={{ width: '90px', height: 'inherit' }} /></p>
           <p><strong>Description:</strong> {drive.description}</p>
           <p><strong>Eligibility:</strong> {drive.eligibility}</p>
           <p><strong>Requirements:</strong> {drive.requirements}</p>
@@ -111,8 +111,8 @@ const FetchDrive = () => {
 
           {/* Edit Form */}
           {isEditing && (
-            <form onSubmit={handleUpdate} className="edit-form">
-              <div className="form-group">
+            <form onSubmit={handleUpdate} className={ Editcss.editform}>
+              <div className={ Editcss.formgroup}>
                 <Input
                   type="text"
                   id="name"
@@ -125,7 +125,7 @@ const FetchDrive = () => {
                   label="Name:"
                 />
               </div>
-              <div className="form-group">
+              <div className={ Editcss.formgroup}>
              
                 <input
                   type="datetime-local"
@@ -139,7 +139,7 @@ const FetchDrive = () => {
                   label="Time:"
                 />
               </div>
-              <div className="form-group">
+              <div className={ Editcss.formgroup}>
                 <Input
                   type="url"
                   id="image"
@@ -152,7 +152,7 @@ const FetchDrive = () => {
                   label="Image URL:"
                 />
               </div>
-              <div className="form-group">
+              <div className={ Editcss.formgroup}>
                 <Input
                   type="text"
                   id="description"
@@ -165,7 +165,7 @@ const FetchDrive = () => {
                   label="Description:"
                 />
               </div>
-              <div className="form-group">
+              <div className={ Editcss.formgroup}>
                 <Input
                   type="text"
                   id="eligibility"
@@ -178,7 +178,7 @@ const FetchDrive = () => {
                   label="Eligibility:"
                 />
               </div>
-              <div className="form-group">
+              <div className={ Editcss.formgroup}>
                 <Input
                   type="text"
                   id="requirements"

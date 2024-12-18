@@ -1,31 +1,35 @@
-*{
-    margin:0;
-}
-.login-component{
+
+.logincomponent{
+    margin: 0;
     margin-left: 1rem;
     display: flex;
    flex-direction: column;
-   gap:3rem;
+ 
    width: 430px;
-   height: 100vh;
+   height: 100%;
+
 }
-.verify-student-container{
-    margin-top: 2rem;
+.verifystudentcontainer{
+
+    margin-top: 3rem;
    width: 400px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   gap:2rem
+  
+ 
    
 }
 
-.login-logo{
-    
+.loginlogo{
+   
+    margin: 0;
     height: 9rem;
 }
-.form-group{
+.formgroup{
     margin-left: 1rem;
     width: 380px;
+    margin: 0;
   
 }

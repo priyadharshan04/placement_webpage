@@ -2,7 +2,7 @@
 // import AddDrive from "./components/drive.admin.jsx"
 // import UpdateDrive from "./components/drive.admin.edit.jsx"
 // import DeleteDrive from "./components/drive.delete.component.jsx"
-import UserLogin from "./components/login.component.jsx"
+import Login from "./login.jsx"
 
 
 
@@ -16,7 +16,7 @@ function App() {
       <DriveList/>
       <AddDrive/>
       <UpdateDrive/> */}
-      <UserLogin/>
+      <Login/>
       </>
       
   )

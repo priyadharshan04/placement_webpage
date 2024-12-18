@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Input from "../../styled_components/input.jsx";
 import Button from "../../styled_components/button.styled-component.jsx";
-import "./drive.delete.css"
+import Deletecss from "../styles/delete.module.css"
  // Optional CSS file for styling
 
 const DeleteDrive = () => {
@@ -33,12 +33,12 @@ const DeleteDrive = () => {
   };
 
   return (
-    <div className="delete-drive-container">
-      <h2 className="title">Delete Drive by Name</h2>
-      {message && <p className="message">{message}</p>}
+    <div className={Deletecss.deletedrivecontainer}>
+      <h2 className={Deletecss.title}>Delete Drive by Name</h2>
+      {message && <p className={Deletecss.message}>{message}</p>}
 
-      <form onSubmit={handleDelete} className="delete-form">
-        <div className="form-delete-group">
+      <form onSubmit={handleDelete} className={Deletecss.deleteform}>
+        <div className={Deletecss.formdeletegroup}>
           <Input
             type="text"
             id="name"
