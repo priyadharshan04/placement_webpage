@@ -1,8 +1,5 @@
-// import DriveList from "./components/drive.component.display.jsx"
-// import AddDrive from "./components/drive.admin.jsx"
-// import UpdateDrive from "./components/drive.admin.edit.jsx"
-// import DeleteDrive from "./components/drive.delete.component.jsx"
-import Login from "./login.jsx"
+import Home from "./home.jsx"
+// import Login from "./login.jsx"
 
 
 
@@ -12,11 +9,8 @@ function App() {
 
   return (
     <>
-    {/* <DeleteDrive/>
-      <DriveList/>
-      <AddDrive/>
-      <UpdateDrive/> */}
-      <Login/>
+     <Home/>
+      {/* <Login/> */}
       </>
       
   )

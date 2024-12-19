@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import  Logincss from "../styles/login.module.css"// Import the CSS file
+import  LoginCSS from"../styles/login.module.css"; // Import the CSS file
 import Input from "../../styled_components/input.login.jsx";
 import Button from "../../styled_components/login.button.jsx";
 
@@ -51,18 +51,18 @@ const UserLogin = () => {
     }
   };
 
-  return (<div className={Logincss.logincomponent}>
-    <div className={Logincss.verifystudentcontainer}>
-      <img src="./src/assets/sjce_logo.jpg" alt="" className={Logincss.loginlogo}/>
-      <h2>St. Joseph&apos;s College of Engineering</h2>
-      <center><p>Off, Old Mahabalipuram Road, Kamaraj Nagar, Semmancheri, Chennai, Tamil Nadu 600119</p></center>
-      {error && <p className={Logincss.errormessage}>{error}</p>}
-      {/* {successMessage && <p className="success-message">{successMessage}</p>} Display success message */}
+  return (<div className={LoginCSS["login-component"]}>
+    <div className={LoginCSS["verify-student-container"]}>
+      <img src="./src/assets/sjce_logo.jpg" alt="" className={LoginCSS["login-logo"]}/>
+      <h2 className={LoginCSS["login-heading"]}>St. Joseph&apos;s College of Engineering</h2>
+      <center><p className={LoginCSS["login-description"]}>Off, Old Mahabalipuram Road, Kamaraj Nagar, Semmancheri, Chennai, Tamil Nadu 600119</p></center>
+      {error && <p className={LoginCSS["error-message"]}>{error}</p>}
+      {/* {successMessage && <p className={LoginCSS["success-message"]}>{successMessage}</p>}  */}
 
       
     </div>
     <form onSubmit={handleSubmit}>
-        <div className={Logincss.loginformgroup}>
+        <div className={LoginCSS["form-group"]}>
           <h3>Sign in</h3>
           
           <Input
@@ -76,7 +76,7 @@ const UserLogin = () => {
             label="Registration Number:"
           />
         </div>
-        <div className={Logincss.loginformgroup}>
+        <div className={LoginCSS["form-group"]}>
           
           <Input
             type="password"
@@ -85,16 +85,18 @@ const UserLogin = () => {
             value={formData.password}
             onChange={handleChange}
             required
-            
+        
             label="Password"
           />
         </div>
+        <div className={LoginCSS["login-bttn"]}>
         <Button
           type="submit"
-         
+          
           disabled={loading}
         >
         </Button>
+        </div>
       </form>
     </div>
   );
