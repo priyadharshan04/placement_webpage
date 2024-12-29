@@ -1,5 +1,5 @@
-import Home from "./home.jsx"
-// import Login from "./login.jsx"
+import Home from "./pages/Home.jsx"
+// import Login from "./pages/login.jsx"
 
 
 
