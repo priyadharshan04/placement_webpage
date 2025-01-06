@@ -1,4 +1,4 @@
-import UserLogin from "./components/login.component.jsx";
+import UserLogin from "../components/login.component.jsx";
 
 function Login(){
     const style={

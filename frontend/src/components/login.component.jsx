@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import axios from "axios";
 import  LoginCSS from"../styles/login.module.css"; // Import the CSS file
@@ -25,7 +26,7 @@ const UserLogin = () => {
       // Make a POST request to the API
       const response = await axios.post(
         `http://localhost:5000/api/studentauth/${formData.regno}/verify`,
-        { password: formData.password },
+        { password: formData.password }, // Body
         {
           headers: {
             "Content-Type": "application/json",

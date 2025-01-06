@@ -1,6 +1,5 @@
 import Drive from "../models/drives.models.js";
-import Studentauth from "../models/user.model.js";
-import bcrypt from "bcrypt"
+
 
 // Controller for creating a new drive
 export const createDrive = async (req, res) => {
@@ -143,65 +142,3 @@ export const deleteDriveByName = async (req, res) => {
 };
 
 
-export const getStudentByRegno = async (req, res) => {
-  try {
-    const { regno } = req.params;
-    const { password } = req.body;
-
-    if (!password) {
-      return res.status(400).json({ message: "Password is required" });
-    }
-
-    // Find student by registration number
-    const student = await Studentauth.findOne({ regno });
-
-    if (!student) {
-      return res.status(404).json({ message: "Student not found" });
-    }
-
-    // Verify the password using bcrypt
-    const isMatch = await bcrypt.compare(password, student.password);
-    if (!isMatch) {
-      return res.status(401).json({ message: "Invalid credentials" });
-    }
-
-    // Respond with student details (excluding the password)
-    const { _id, email, regno: studentRegno,name,admin, createdAt, updatedAt } = student;
-    res.status(200).json({ _id, email, regno: studentRegno,name,admin, createdAt, updatedAt });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error", error: error.message });
-  }
-};
-
-
-export const addStudent = async (req, res) => {
-  try {
-    const { name, email, regno, password, admin } = req.body;
-
-    // Validate all required fields
-    if (!name || !email || !regno || !password || admin === undefined) {
-      return res.status(400).json({ message: "All fields are required" });
-    }
-
-    // Hash the password before storing it
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create the new student with all required fields
-    const newStudent = new Studentauth({
-      name,
-      email,
-      regno,
-      password: hashedPassword,
-      admin, // Ensure this is included
-    });
-
-    // Save the student to the database
-    await newStudent.save();
-
-    res.status(201).json({ message: "Student registered successfully" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error", error: error.message });
-  }
-};
